@@ -1,0 +1,127 @@
+<html>
+  <head>
+      <style>
+           body{
+             background-image: url("http://127.0.0.1:5000/static/authors/dasboardimg.jfif"); 
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: 0%;
+            
+                        }
+            h1{
+                  text-align: center;
+              
+              }
+              input,label{
+                  padding: 3px;
+                  margin: 1px;
+              
+              }
+              
+              #a input:hover{
+                  background-color: antiquewhite;
+              }
+              
+              .container img{
+                width: 100%;
+              }
+              </style>
+              <title>Dashboard</title>
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+              <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+          </head>
+          <nav class="navbar navbar-dark bg-dark">
+              <a id="navbarHeader" class="navbar-brand" href="{{ url_for('dashboard') }}"><img src="{{ url_for('static', filename='icon.png') }}" width="30" height="30" class="d-inline-block align-top" alt=""> BookSearch </a>
+      
+              <div id="btn-group">
+                  <a class="btn btn-primary" href="{{ url_for('logout') }}"> Logout </a>
+              </div>
+          </nav>
+               
+                   <body>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div id="a">
+                                <h1><b><u>Dashboard</u></b></h1>
+                               <form action="{{ url_for('search') }}" method="post">
+                                        <input class="form-control" name="searchbox" type="text" placeholder="Title, Author,Year">
+                                        <br>
+                                        <button type="submit" class="btn btn-primary" style="width:100%;"> Search </button>
+                                    </form>
+                                </div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+
+                    <div class="row">
+                          <h2><b><u>Authors</u></b></h2> 
+                        <div class="col-lg-12">
+                            <!-- <h3>Authors</h3> -->
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Terry Brooks') }}"><img src="http://127.0.0.1:5000/static/authors/terry_brroks.jfif" width="200" height="150" ><br>
+                            Terry Brooks</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Michael connelly') }}"><img src="http://127.0.0.1:5000/static/authors/Michael connelly.jfif"  width="200" height="150"><br>
+                            Michael connelly</a>
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Peter may') }}"><img src="http://127.0.0.1:5000/static/authors/Peter may.jfif" width="200" height="150" ><br>
+                            Peter may</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Glen Cook') }}"><img src="http://127.0.0.1:5000/static/authors/Glen Cook.jfif"  width="200" height="150" ><br>
+                            Glen Cook</a>
+                                </div>
+                            
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Edgar Allan') }}"><img src="http://127.0.0.1:5000/static/authors/Edgar Allan Poe.jfif"  width="200" height="150"><br>
+                            Edgar Allan Poe</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='James Ellroy') }}"><img src="http://127.0.0.1:5000/static/authors/James Ellroy.jfif" width="200" height="150" ><br>
+                            James Ellroy</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Sarah Dessen') }}"><img src="http://127.0.0.1:5000/static/authors/Sarah Dessen.jpg"  width="200" height="150"><br>
+                            Jude Deveraux</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Lloyal Alexander') }}"><img src="http://127.0.0.1:5000/static/authors/Lloyal Alexander.jfif" width="200" height="150"  ><br>
+                            Lloyal Alexander</a>
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Patrick Carman') }}"><img src="http://127.0.0.1:5000/static/authors/Patrick Carman.jfif"width="200" height="150" ><br>
+                            Patrick Carman</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Brent Weeks') }}"><img src="http://127.0.0.1:5000/static/authors/Brent Weeks.jfif"  width="200" height="150"><br>
+                            Brent Weeks</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Dean Koontz') }}"><img src="http://127.0.0.1:5000/static/authors/Dean Koontz.jfif" width="200" height="150"><br>
+                            Dean Koontz</a>
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="{{ url_for('searching', name='Tom Robbins') }}"><img src="http://127.0.0.1:5000/static/authors/Tom Robbins.jfif" width="200" height="150" ><br>
+                            Tom Robbins</a>
+                                </div>
+
+                                </div>
+                            </div>                            
+                        </div>
+                        </div>
+                        
+                    
+                </div>
+                       </body>
+                       </html> 

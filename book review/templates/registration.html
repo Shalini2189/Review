@@ -1,0 +1,55 @@
+ <html>
+    <head>
+        <style>
+            body{
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQexjzVd2B75ILtPVJutiKqo0YcuOXwZmW3pw&usqp=CAU");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 20%;
+                }
+                h1{
+                    text-align: center;
+                
+                }
+                input,label{
+                    padding: 3px;
+                    margin: 1px;
+                
+                }
+                #a{
+                    margin-left: 50%;
+                    margin-top: 10%;
+                    width:30%;
+                    height: 0%;
+                    padding: 30px;
+                    border-radius: 5px;
+                }
+                #a input:hover{
+                    background-color: antiquewhite;
+                }
+               </style>
+        <title>Register</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <nav class="navbar navbar-dark bg-dark">
+        <a id="navbarHeader" class="navbar-brand" href="#"><img src="{{ url_for('static', filename='icon.png') }}" width="30" height="30" class="d-inline-block align-top" alt=""> BookSearch </a>
+        <a class="btn btn-primary" href="{{ url_for('login') }}"> Sign in </a>
+    </nav>
+                       <body>
+                       <div id="a">
+                        <h1><u><b>REGISTRATION</b></u></h1>
+                       <form action="{{ url_for('register') }}" method="post">
+                        <input class="form-control" name="username" type="text"  placeholder="username" required maxlength="30">
+                        <br>
+                        <input class="form-control" name="E-mail" type="email" placeholder="e-mail" required maxlength="30">
+                        <br>
+                        <input class="form-control" name="password" type="password" placeholder="password" required maxlength="8"> 
+                        <br>
+                        <!-- <input class="form-control" name="confirm-password" type="password" placeholder="confirm-password" required maxlength="8">
+                        <br> -->
+                        <button class="btn btn-primary" type="submit" style="width:100%;">Enter</button>
+                      </form>
+                    </div>
+                    </body>
+                  </html>
